@@ -15,7 +15,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # ===== Job 1: CI — валидация статики =====
   ci:
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +39,6 @@ jobs:
           path: public
           retention-days: 1
 
-  # ===== Job 2: Deploy =====
   deploy:
     needs: ci
     if: github.ref == 'refs/heads/main'
