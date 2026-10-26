@@ -11,74 +11,43 @@ const humidity = document.getElementById('humidity')
 const feelsLike = document.getElementById('feels-like')
 const weatherIcon = document.getElementById('weather-icon')
 
-// Словарь для перевода кодов погоды
-const weatherCodes = {
-  0: ['☀️', 'Ясно'],
-  1: ['🌤️', 'Преимущественно ясно'],
-  2: ['⛅', 'Переменная облачность'],
-  3: ['☁️', 'Облачно'],
-  45: ['🌫️', 'Туман'],
-  48: ['🌫️', 'Иней и туман'],
-  51: ['🌦️', 'Легкая морось'],
-  53: ['🌦️', 'Морось'],
-  55: ['🌧️', 'Сильная морось'],
-  61: ['🌧️', 'Небольшой дождь'],
-  63: ['🌧️', 'Дождь'],
-  65: ['🌧️', 'Сильный дождь'],
-  71: ['🌨️', 'Небольшой снег'],
-  73: ['🌨️', 'Снег'],
-  75: ['❄️', 'Сильный снег'],
-  80: ['🌦️', 'Ливень'],
-  95: ['⛈️', 'Гроза'],
-}
+// Локальная база данных (демо-режим)
+const mockWeatherData = {
+  'москва': { temp: 15, feels: 13, wind: 4, hum: 65, desc: 'Переменная облачность', icon: '⛅' },
+  'санкт-петербург': { temp: 12, feels: 10, wind: 6, hum: 75, desc: 'Небольшой дождь', icon: '🌧️' },
+  'спб': { temp: 12, feels: 10, wind: 6, hum: 75, desc: 'Небольшой дождь', icon: '🌧️' },
+  'лондон': { temp: 16, feels: 15, wind: 5, hum: 80, desc: 'Туман', icon: '🌫️' },
+  'сочи': { temp: 24, feels: 25, wind: 3, hum: 60, desc: 'Ясно', icon: '☀️' },
+  'казань': { temp: 14, feels: 12, wind: 4, hum: 60, desc: 'Облачно', icon: '☁️' }
+};
 
-async function getWeather(city) {
-  statusText.textContent = 'Загрузка...'
-  weatherCard.classList.add('hidden')
+function getWeather(city) {
+  statusText.textContent = 'Загрузка...';
+  weatherCard.classList.add('hidden');
 
-  try {
-    // Используем прокси allorigins, чтобы обойти возможную блокировку
-    const proxyUrl = 'https://api.allorigins.win/get?url='
-    
-    // 1. Геокодинг (получаем координаты)
-    const geoUrl = encodeURIComponent(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=ru&format=json`)
-    const geoRes = await fetch(proxyUrl + geoUrl)
-    const geoData = await geoRes.json()
-    
-    // Парсим ответ от прокси
-    const geoResult = JSON.parse(geoData.contents)
+  // Имитируем задержку сети (чтобы было реалистично)
+  setTimeout(() => {
+    const normalizedCity = city.toLowerCase().trim();
+    const data = mockWeatherData[normalizedCity];
 
-    if (!geoResult.results || geoResult.results.length === 0) {
-      statusText.textContent = 'Город не найден. Попробуйте другой.'
-      return
+    if (!data) {
+      statusText.textContent = 'Город не найден в демо-базе. Попробуйте: Москва, СПб, Лондон, Сочи или Казань.';
+      return;
     }
 
-    const { latitude, longitude, name, country } = geoResult.results[0]
+    statusText.textContent = '';
     
-    // 2. Погода (по координатам)
-    const weatherUrl = encodeURIComponent(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m`)
-    const weatherRes = await fetch(proxyUrl + weatherUrl)
-    const weatherData = await weatherRes.json()
-    
-    const weatherResult = JSON.parse(weatherData.contents)
-    const current = weatherResult.current
-    const weatherInfo = weatherCodes[current.weather_code] || ['🌡️', 'Неизвестно']
+    // Выводим данные
+    cityName.textContent = city.charAt(0).toUpperCase() + city.slice(1);
+    temperature.textContent = `${data.temp}°C`;
+    description.textContent = data.desc;
+    weatherIcon.textContent = data.icon;
+    wind.textContent = `${data.wind} км/ч`;
+    humidity.textContent = `${data.hum}%`;
+    feelsLike.textContent = `${data.feels}°C`;
 
-    // 3. Выводим на экран
-    cityName.textContent = `${name}, ${country}`
-    temperature.textContent = `${Math.round(current.temperature_2m)}°C`
-    description.textContent = weatherInfo[1]
-    weatherIcon.textContent = weatherInfo[0]
-    wind.textContent = `${current.wind_speed_10m} км/ч`
-    humidity.textContent = `${current.relative_humidity_2m}%`
-    feelsLike.textContent = `${Math.round(current.apparent_temperature)}°C`
-
-    statusText.textContent = ''
-    weatherCard.classList.remove('hidden')
-  } catch (error) {
-    statusText.textContent = 'Ошибка при запросе. Проверьте интернет.'
-    console.error('Ошибка:', error)
-  }
+    weatherCard.classList.remove('hidden');
+  }, 500); // Полсекунды задержки
 }
 
 form.addEventListener('submit', (e) => {
