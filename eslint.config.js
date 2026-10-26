@@ -10,5 +10,9 @@ export default [
       sourceType: 'script',
       globals: globals.browser,
     },
+    rules: {
+      'no-undef': 'off',
+      'no-unused-vars': 'warn'
+    }
   },
 ]

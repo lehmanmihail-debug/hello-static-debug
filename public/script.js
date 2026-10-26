@@ -1,6 +1,6 @@
 const form = document.getElementById('search-form')
 const input = document.getElementById('city-input')
-const status = document.getElementById('status')
+const statusText = document.getElementById('status')
 const weatherCard = document.getElementById('weather-card')
 
 const cityName = document.getElementById('city-name')
@@ -34,7 +34,7 @@ const weatherCodes = {
 
 // Функция получения погоды
 async function getWeather(city) {
-  status.textContent = 'Загрузка...'
+  statusText.textContent = 'Загрузка...' // <-- ВОТ ЭТА СТРОКА
   weatherCard.classList.add('hidden')
 
   try {
