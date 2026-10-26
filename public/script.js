@@ -11,57 +11,73 @@ const humidity = document.getElementById('humidity')
 const feelsLike = document.getElementById('feels-like')
 const weatherIcon = document.getElementById('weather-icon')
 
+// Словарь для перевода кодов погоды
+const weatherCodes = {
+  0: ['☀️', 'Ясно'],
+  1: ['🌤️', 'Преимущественно ясно'],
+  2: ['⛅', 'Переменная облачность'],
+  3: ['☁️', 'Облачно'],
+  45: ['🌫️', 'Туман'],
+  48: ['🌫️', 'Иней и туман'],
+  51: ['🌦️', 'Легкая морось'],
+  53: ['🌦️', 'Морось'],
+  55: ['🌧️', 'Сильная морось'],
+  61: ['🌧️', 'Небольшой дождь'],
+  63: ['🌧️', 'Дождь'],
+  65: ['🌧️', 'Сильный дождь'],
+  71: ['🌨️', 'Небольшой снег'],
+  73: ['🌨️', 'Снег'],
+  75: ['❄️', 'Сильный снег'],
+  80: ['🌦️', 'Ливень'],
+  95: ['⛈️', 'Гроза'],
+}
+
 async function getWeather(city) {
   statusText.textContent = 'Загрузка...'
   weatherCard.classList.add('hidden')
 
   try {
-    // Используем сервис wttr.in (работает без ключей и блокировок)
-    const res = await fetch(`https://wttr.in/${encodeURIComponent(city)}?format=j1`)
+    // Используем прокси allorigins, чтобы обойти возможную блокировку
+    const proxyUrl = 'https://api.allorigins.win/get?url='
     
-    if (!res.ok) {
-      throw new Error('Город не найден')
-    }
+    // 1. Геокодинг (получаем координаты)
+    const geoUrl = encodeURIComponent(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=ru&format=json`)
+    const geoRes = await fetch(proxyUrl + geoUrl)
+    const geoData = await geoRes.json()
+    
+    // Парсим ответ от прокси
+    const geoResult = JSON.parse(geoData.contents)
 
-    const data = await res.json()
-    
-    if (!data.current_condition || data.current_condition.length === 0) {
+    if (!geoResult.results || geoResult.results.length === 0) {
       statusText.textContent = 'Город не найден. Попробуйте другой.'
       return
     }
 
-    const current = data.current_condition[0]
+    const { latitude, longitude, name, country } = geoResult.results[0]
     
-    // Данные из wttr.in
-    const temp = current.temp_C
-    const feels = current.FeelsLikeC
-    const hum = current.humidity
-    const windSpeed = current.windspeedKmph
-    const desc = current.weatherDesc[0].value
+    // 2. Погода (по координатам)
+    const weatherUrl = encodeURIComponent(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m`)
+    const weatherRes = await fetch(proxyUrl + weatherUrl)
+    const weatherData = await weatherRes.json()
+    
+    const weatherResult = JSON.parse(weatherData.contents)
+    const current = weatherResult.current
+    const weatherInfo = weatherCodes[current.weather_code] || ['🌡️', 'Неизвестно']
 
-    // Подбираем эмодзи по описанию (так как wttr.in отдает текст)
-    let emoji = '🌡️'
-    const descLower = desc.toLowerCase()
-    if (descLower.includes('sun') || descLower.includes('clear')) emoji = '☀️'
-    else if (descLower.includes('cloud') || descLower.includes('overcast')) emoji = '☁️'
-    else if (descLower.includes('rain') || descLower.includes('drizzle')) emoji = '🌧️'
-    else if (descLower.includes('snow')) emoji = '❄️'
-    else if (descLower.includes('thunder')) emoji = '⛈️'
+    // 3. Выводим на экран
+    cityName.textContent = `${name}, ${country}`
+    temperature.textContent = `${Math.round(current.temperature_2m)}°C`
+    description.textContent = weatherInfo[1]
+    weatherIcon.textContent = weatherInfo[0]
+    wind.textContent = `${current.wind_speed_10m} км/ч`
+    humidity.textContent = `${current.relative_humidity_2m}%`
+    feelsLike.textContent = `${Math.round(current.apparent_temperature)}°C`
 
     statusText.textContent = ''
-
-    cityName.textContent = city.charAt(0).toUpperCase() + city.slice(1)
-    temperature.textContent = `${temp}°C`
-    description.textContent = desc
-    weatherIcon.textContent = emoji
-    wind.textContent = `${windSpeed} км/ч`
-    humidity.textContent = `${hum}%`
-    feelsLike.textContent = `${feels}°C`
-
     weatherCard.classList.remove('hidden')
   } catch (error) {
-    statusText.textContent = 'Ошибка: город не найден или проблемы с сетью.'
-    console.error('Ошибка при запросе:', error)
+    statusText.textContent = 'Ошибка при запросе. Проверьте интернет.'
+    console.error('Ошибка:', error)
   }
 }
 
