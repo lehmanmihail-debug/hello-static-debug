@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз на неделю — Погода</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>📅 Прогноз на неделю</h1>
+        <p class="page-subtitle">Погода на 7 дней вперёд для любого города мира</p>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link active" href="./forecast.html">📅 Прогноз на неделю</a>
+        <a class="nav-link" href="./cities.html">🌍 Города мира</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <section class="card">
+          <h2>Введите город</h2>
+          <form id="forecast-form" class="search-form">
+            <label class="field-label" for="forecast-city">Название города</label>
+            <input
+              id="forecast-city"
+              type="text"
+              placeholder="Например: Казань"
+              autocomplete="off"
+              required
+            >
+            <button type="submit">Показать прогноз</button>
+          </form>
+          <p id="forecast-status" class="status">По умолчанию показан прогноз для Москвы</p>
+        </section>
+
+        <div id="forecast-loading" class="loading hidden">
+          <div class="spinner"></div>
+          <p>Загружаем прогноз...</p>
+        </div>
+
+        <section id="forecast-result" class="card hidden">
+          <h2 id="forecast-city-name">—</h2>
+          <div id="forecast-grid" class="week-grid"></div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Данные: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+        <p>Deployed with ❤️ to GitHub Pages</p>
+      </footer>
+    </div>
+
+    <script src="./forecast.js"></script>
+  </body>
+</html>

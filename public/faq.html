@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — Погода</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>❓ Частые вопросы</h1>
+        <p class="page-subtitle">Всё, что вы хотели спросить о проекте</p>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./forecast.html">📅 Прогноз на неделю</a>
+        <a class="nav-link" href="./cities.html">🌍 Города мира</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link active" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <details class="faq-item" open>
+          <summary>Откуда берутся данные о погоде?</summary>
+          <p class="faq-answer">
+            Из открытого API <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.
+            Это бесплатный сервис для некоммерческого использования: он не требует
+            регистрации и API-ключей. Мы отправляем запросы прямо из браузера —
+            сервер не нужен.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Почему на главной показывается погода Москвы?</summary>
+          <p class="faq-answer">
+            Это демо-режим: чтобы страница не встречала вас пустыми карточками,
+            при загрузке мы автоматически показываем погоду Москвы. Просто
+            введите свой город — и данные обновятся.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Какие города можно искать?</summary>
+          <p class="faq-answer">
+            Любой населённый пункт мира! Страница «Прогноз на неделю» использует
+            геокодинг Open-Meteo, который понимает русские и английские названия —
+            например, «Казань» или «London». На странице «Города мира» уже
+            собраны 9 крупнейших городов планеты.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Почему сайт написан без React и Vue?</summary>
+          <p class="faq-answer">
+            Так задумано! Это учебный проект: цель команды — разобраться в основах
+            веб-разработки, а не прятать логику за фреймворками. Всё, что вы
+            видите на сайте, написано руками на HTML, CSS и JavaScript.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Как быстро сайт обновляется после изменений кода?</summary>
+          <p class="faq-answer">
+            Автоматически! GitHub Actions собирает сайт и публикует его на
+            GitHub Pages при каждом push в ветку main. Обычно обновление
+            занимает одну-две минуты. Историю сборок можно посмотреть во
+            <a href="https://github.com/lehmanmihail-debug/hello-static-debug/actions" target="_blank" rel="noopener">вкладке Actions</a>.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Как запустить проект у себя на компьютере?</summary>
+          <p class="faq-answer">
+            Сборка не нужна: склонируйте
+            <a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">репозиторий</a>
+            и откройте файл <code>public/index.html</code> в браузере. Для запуска
+            линтеров выполните <code>npm install</code>, затем <code>npm run lint</code>.
+          </p>
+        </details>
+
+        <details class="faq-item">
+          <summary>Я нашёл баг — что делать?</summary>
+          <p class="faq-answer">
+            Откройте <a href="https://github.com/lehmanmihail-debug/hello-static-debug/issues" target="_blank" rel="noopener">issue в репозитории</a>
+            и опишите проблему: что сделали, что ожидали и что получилось.
+            Команда разберётся и починит!
+          </p>
+        </details>
+      </main>
+
+      <footer class="footer">
+        <p>Данные: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+        <p>Deployed with ❤️ to GitHub Pages</p>
+      </footer>
+    </div>
+  </body>
+</html>

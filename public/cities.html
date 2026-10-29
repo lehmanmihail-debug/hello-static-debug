@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Города мира — Погода</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>🌍 Города мира</h1>
+        <p class="page-subtitle">Погода прямо сейчас в 9 городах планеты</p>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./forecast.html">📅 Прогноз на неделю</a>
+        <a class="nav-link active" href="./cities.html">🌍 Города мира</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <div id="cities-loading" class="loading">
+          <div class="spinner"></div>
+          <p>Загружаем погоду в городах мира...</p>
+        </div>
+
+        <section id="cities-section" class="hidden">
+          <div id="cities-grid" class="cities-grid"></div>
+          <p id="cities-updated" class="updated-note"></p>
+          <div class="refresh-row">
+            <button id="refresh-btn" class="refresh-btn" type="button">🔄 Обновить данные</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Данные: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+        <p>Deployed with ❤️ to GitHub Pages</p>
+      </footer>
+    </div>
+
+    <script src="./cities.js"></script>
+  </body>
+</html>

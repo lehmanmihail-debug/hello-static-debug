@@ -1,0 +1,487 @@
+/* ==========================================================
+   pages.css — дополнительные стили: навигация и новые страницы
+   Подключается после style.css, использует его CSS-переменные
+   ========================================================== */
+
+/* ---------- Навигация по вкладкам ---------- */
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  background: rgb(255 255 255 / 15%);
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 14px;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.nav-link {
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgb(255 255 255 / 20%);
+}
+
+.nav-link.active {
+  background: var(--card-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ---------- Достилизация главной страницы ---------- */
+
+.subtitle {
+  color: white;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.quick-cities {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.quick-cities button {
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.quick-cities button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.status {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  min-height: 1.4em;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.weather-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.weather-description {
+  text-align: center;
+  color: var(--text-muted);
+  margin: 0.75rem 0 1.25rem;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  list-style: none;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.weather-details li {
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 1.5rem;
+}
+
+.footer a {
+  color: white;
+  font-weight: 600;
+}
+
+/* ---------- Общие элементы новых страниц ---------- */
+
+.page-subtitle {
+  color: white;
+  opacity: 0.85;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+.field-label {
+  display: block;
+  color: white;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.updated-note {
+  text-align: center;
+  color: white;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: 0.75rem;
+}
+
+/* ---------- Прогноз на неделю ---------- */
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.6rem;
+}
+
+.day-card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.day-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+
+.day-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.day-icon {
+  font-size: 2rem;
+  display: block;
+  margin: 0.25rem 0;
+}
+
+.day-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  min-height: 2.1em;
+  margin-bottom: 0.35rem;
+}
+
+.day-temps {
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+  align-items: baseline;
+}
+
+.day-max {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.day-min {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.day-extra {
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ---------- Города мира ---------- */
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.city-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.1rem 0.75rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-3px);
+}
+
+.city-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.city-country {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.city-icon {
+  font-size: 2.4rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.city-temp {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.city-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0.25rem 0 0.75rem;
+  min-height: 2.2em;
+}
+
+.city-meta {
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.refresh-row {
+  text-align: center;
+  margin-top: 1.25rem;
+}
+
+.refresh-btn {
+  padding: 0.6rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* ---------- О проекте ---------- */
+
+.about-lead {
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.step-list {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.step-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  line-height: 1.55;
+}
+
+.step-num {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack-list {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.stack-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.5;
+}
+
+.stack-emoji {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.stack-list strong {
+  color: var(--accent);
+}
+
+.link-list {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.link-list a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-list a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Команда ---------- */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.member-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.member-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin: 0 auto 0.75rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.avatar-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.avatar-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.avatar-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.avatar-5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+
+.member-name {
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.member-role {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.member-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+  padding-right: 2.5rem;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-answer {
+  padding: 0 1.25rem 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---------- Адаптивность ---------- */
+
+@media (width <= 600px) {
+  .nav-link {
+    font-size: 0.82rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .weather-details {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-icon,
+  .temperature {
+    font-size: 3rem;
+  }
+}

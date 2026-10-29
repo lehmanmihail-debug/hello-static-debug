@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команда — Погода</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>👥 Наша команда</h1>
+        <p class="page-subtitle">Пять человек, которые сделали этот сайт</p>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./forecast.html">📅 Прогноз на неделю</a>
+        <a class="nav-link" href="./cities.html">🌍 Города мира</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link active" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <section class="card">
+          <h2>Кто мы</h2>
+          <p class="about-lead">
+            Проект сделан учебной командой из пяти человек. У каждого была своя
+            зона ответственности: так мы научились работать параллельно, вести
+            код через pull request'ы и ревьюить друг друга. Ниже — кто за что
+            отвечал.
+          </p>
+        </section>
+
+        <div class="team-grid">
+          <article class="member-card">
+            <div class="member-avatar avatar-1">МЛ</div>
+            <p class="member-name">Лехман Михаил</p>
+            <span class="member-role">👑 Тимлид</span>
+            <p class="member-desc">
+              Ставил задачи, придумывал архитектуру проекта, ревьюил код
+              одногруппников и сливал pull request'ы в main.
+            </p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar avatar-2">ВР</div>
+            <p class="member-name">Роденко Вениамин</p>
+            <span class="member-role">🛠️ Девопс</span>
+            <p class="member-desc">
+              Настроил CI/CD: workflow GitHub Actions, автодеплой на GitHub
+              Pages и линтеры для проверки кода.
+            </p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar avatar-3">АЧ</div>
+            <p class="member-name">Чудин Артём</p>
+            <span class="member-role">💻 Программист</span>
+            <p class="member-desc">
+              Верстал страницы: разметка, семантика, структура карточек
+              и адаптивность под мобильные устройства.
+            </p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar avatar-4">АБ</div>
+            <p class="member-name">Берендаков Андрей</p>
+            <span class="member-role">💻 Программист</span>
+            <p class="member-desc">
+              Занимался стилями: градиент, оформление карточек погоды,
+              цветовые переменные и аккуратная сетка.
+            </p>
+          </article>
+
+          <article class="member-card">
+            <div class="member-avatar avatar-5">ПЕ</div>
+            <p class="member-name">Емельянов Павел</p>
+            <span class="member-role">💻 Программист</span>
+            <p class="member-desc">
+              Писал JavaScript: запросы к API Open-Meteo, обработка ответов
+              и ошибок, обновление страницы без перезагрузки.
+            </p>
+          </article>
+        </div>
+
+        <section class="card">
+          <h2>Хотите помочь?</h2>
+          <p class="about-lead">
+            Мы открыты к идеям! Если хотите предложить улучшение — откройте issue
+            в репозитории или пришлите pull request. Правила работы описаны
+            в README проекта.
+          </p>
+          <ul class="link-list">
+            <li>🐛 <a href="https://github.com/lehmanmihail-debug/hello-static-debug/issues" target="_blank" rel="noopener">Сообщить о баге или предложить идею</a></li>
+            <li>📁 <a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Репозиторий проекта</a></li>
+          </ul>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Данные: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
+        <p>Deployed with ❤️ to GitHub Pages</p>
+      </footer>
+    </div>
+  </body>
+</html>
