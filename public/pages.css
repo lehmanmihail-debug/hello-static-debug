@@ -1,6 +1,6 @@
 /* ==========================================================
-   pages.css — дополнительные стили: навигация и новые страницы
-   Подключается после style.css, использует его CSS-переменные
+   pages.css — стили сайта команды Hello Static Debug
+   Подключается после style.css и использует его CSS-переменные
    ========================================================== */
 
 /* ---------- Навигация по вкладкам ---------- */
@@ -37,7 +37,7 @@
   font-weight: 600;
 }
 
-/* ---------- Достилизация главной страницы ---------- */
+/* ---------- Шапки страниц ---------- */
 
 .subtitle {
   color: white;
@@ -46,89 +46,6 @@
   font-size: 1.05rem;
 }
 
-.quick-cities {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-
-.quick-cities button {
-  padding: 0.45rem 1.1rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  background: var(--card-bg);
-  color: var(--text);
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.quick-cities button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.status {
-  text-align: center;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  min-height: 1.4em;
-}
-
-.weather-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.weather-icon {
-  font-size: 4rem;
-  line-height: 1;
-}
-
-.temperature {
-  font-size: 4rem;
-  font-weight: bold;
-  color: var(--accent);
-}
-
-.weather-description {
-  text-align: center;
-  color: var(--text-muted);
-  margin: 0.75rem 0 1.25rem;
-}
-
-.weather-details {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  list-style: none;
-  border-top: 1px solid var(--border);
-  padding-top: 1rem;
-}
-
-.weather-details li {
-  text-align: center;
-}
-
-.footer {
-  text-align: center;
-  color: white;
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin-top: 1.5rem;
-}
-
-.footer a {
-  color: white;
-  font-weight: 600;
-}
-
-/* ---------- Общие элементы новых страниц ---------- */
-
 .page-subtitle {
   color: white;
   opacity: 0.85;
@@ -136,165 +53,172 @@
   font-size: 1.05rem;
 }
 
-.field-label {
-  display: block;
-  color: white;
-  font-size: 0.9rem;
-  margin-bottom: 0.4rem;
-}
+/* ---------- Кнопки ---------- */
 
-.updated-note {
-  text-align: center;
-  color: white;
-  font-size: 0.85rem;
-  opacity: 0.8;
-  margin-top: 0.75rem;
-}
-
-/* ---------- Прогноз на неделю ---------- */
-
-.week-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-  gap: 0.6rem;
-}
-
-.day-card {
-  background: var(--card-bg);
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border: none;
   border-radius: 10px;
-  padding: 0.75rem 0.5rem;
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
-.day-name {
-  font-size: 0.85rem;
+  background: var(--accent);
+  color: white;
+  font-size: 0.95rem;
   font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  background: transparent;
+  border-color: var(--accent);
   color: var(--accent);
-  margin-bottom: 0.15rem;
 }
 
-.day-date {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin-bottom: 0.25rem;
-}
-
-.day-icon {
-  font-size: 2rem;
+.center-btn {
   display: block;
-  margin: 0.25rem 0;
+  margin: 0.9rem auto 0;
 }
 
-.day-desc {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  min-height: 2.1em;
-  margin-bottom: 0.35rem;
-}
+/* ---------- Главная: приветствие и статистика ---------- */
 
-.day-temps {
-  display: flex;
-  justify-content: center;
-  gap: 0.4rem;
-  align-items: baseline;
-}
-
-.day-max {
-  font-weight: bold;
-  font-size: 1.05rem;
-}
-
-.day-min {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
-.day-extra {
-  margin-top: 0.5rem;
-  border-top: 1px solid var(--border);
-  padding-top: 0.4rem;
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  line-height: 1.5;
-}
-
-/* ---------- Города мира ---------- */
-
-.cities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-}
-
-.city-card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 1.1rem 0.75rem;
+.hero {
   text-align: center;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease;
+  padding: 0.5rem 0 1.25rem;
 }
 
-.city-card:hover {
-  transform: translateY(-3px);
-}
-
-.city-name {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.city-country {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+.hero-greeting {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent);
   margin-bottom: 0.5rem;
 }
 
-.city-icon {
-  font-size: 2.4rem;
-  display: block;
-  margin-bottom: 0.25rem;
+.hero-text {
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto 1.25rem;
 }
 
-.city-temp {
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.offline-badge {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.offline-badge span {
+  display: inline-block;
+  background: var(--card-bg);
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.stat-num {
   font-size: 1.7rem;
   font-weight: bold;
   color: var(--accent);
 }
 
-.city-desc {
-  font-size: 0.82rem;
+.stat-label {
+  font-size: 0.8rem;
   color: var(--text-muted);
-  margin: 0.25rem 0 0.75rem;
-  min-height: 2.2em;
 }
 
-.city-meta {
-  border-top: 1px solid var(--border);
-  padding-top: 0.5rem;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  line-height: 1.6;
+/* ---------- Главная: карточки разделов ---------- */
+
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.refresh-row {
+.section-card {
+  display: block;
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-3px);
+}
+
+.section-emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
+}
+
+.section-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ---------- Цитата / факт дня ---------- */
+
+.quote-box {
   text-align: center;
-  margin-top: 1.25rem;
 }
 
-.refresh-btn {
-  padding: 0.6rem 1.6rem;
-  border: none;
-  border-radius: 8px;
-  background: var(--accent);
-  color: white;
-  font-size: 0.95rem;
-  cursor: pointer;
+.quote-text {
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
 }
 
-.refresh-btn:hover {
-  background: var(--accent-hover);
+.quote-author {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 /* ---------- О проекте ---------- */
@@ -390,7 +314,7 @@
   border-radius: 50%;
   margin: 0 auto 0.75rem;
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -468,6 +392,391 @@
   line-height: 1.6;
 }
 
+/* ---------- Развлечения: общая сетка игр ---------- */
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.game-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.game-card h3 {
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+  font-size: 1.15rem;
+}
+
+.game-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.game-status {
+  min-height: 1.5em;
+  text-align: center;
+  font-weight: 600;
+  margin: 0.75rem 0;
+}
+
+.score-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.score-chip {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.score-chip strong {
+  color: var(--text);
+}
+
+/* ---------- Крестики-нолики ---------- */
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.ttt-cell {
+  aspect-ratio: 1;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  color: var(--accent);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.ttt-cell:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: var(--card-bg);
+}
+
+.ttt-cell:disabled {
+  cursor: default;
+}
+
+/* ---------- Камень, ножницы, бумага ---------- */
+
+.rps-choices {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.rps-btn {
+  font-size: 1.9rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.rps-btn:hover {
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.rps-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.rps-hand {
+  font-size: 3rem;
+  min-width: 3.5rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.rps-vs {
+  font-weight: bold;
+  color: var(--text-muted);
+}
+
+/* ---------- Угадай число ---------- */
+
+.guess-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.guess-form input {
+  width: 110px;
+  padding: 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text);
+}
+
+/* ---------- Викторина ---------- */
+
+.quiz-progress {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.quiz-question {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quiz-option {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.92rem;
+  transition: border-color 0.15s ease;
+}
+
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.quiz-option.correct {
+  border-color: #38a169;
+  background: rgb(56 161 105 / 15%);
+  font-weight: 600;
+}
+
+.quiz-option.wrong {
+  border-color: #e53e3e;
+  background: rgb(229 62 62 / 15%);
+}
+
+.quiz-option:disabled {
+  cursor: default;
+}
+
+.quiz-next {
+  display: block;
+  margin: 0.9rem auto 0;
+  padding: 0.55rem 1.3rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.quiz-next:hover {
+  background: var(--accent-hover);
+}
+
+/* ---------- Галерея ---------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.gallery-tile {
+  border-radius: 14px;
+  padding: 1.25rem 1rem;
+  color: white;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+
+.gallery-tile:hover {
+  transform: translateY(-4px) rotate(-1deg);
+}
+
+.tile-emoji {
+  font-size: 2.2rem;
+  display: block;
+  margin-bottom: auto;
+}
+
+.gallery-tile h3 {
+  font-size: 1.02rem;
+  margin: 0.6rem 0 0.25rem;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 25%);
+}
+
+.gallery-tile p {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  opacity: 0.92;
+}
+
+.tile-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.tile-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.tile-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.tile-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.tile-5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.tile-6 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+.tile-7 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+.tile-8 { background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); }
+.tile-9 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+
+/* ---------- Контакты ---------- */
+
+.contact-list {
+  list-style: none;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+}
+
+.contact-main {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.contact-emoji {
+  font-size: 1.4rem;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.contact-value {
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.contact-value a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-value a:hover {
+  text-decoration: underline;
+}
+
+.copy-btn {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.copy-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: var(--card-bg);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.contact-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.form-success {
+  color: #38a169;
+  font-weight: 600;
+  text-align: center;
+  min-height: 1.2em;
+}
+
+/* ---------- Футер ---------- */
+
+.footer {
+  text-align: center;
+  color: white;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 1.5rem;
+}
+
+.footer a {
+  color: white;
+  font-weight: 600;
+}
+
 /* ---------- Адаптивность ---------- */
 
 @media (width <= 600px) {
@@ -476,12 +785,11 @@
     padding: 0.4rem 0.6rem;
   }
 
-  .weather-details {
-    grid-template-columns: 1fr;
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .weather-icon,
-  .temperature {
-    font-size: 3rem;
+  .games-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>О проекте — Погода</title>
+    <title>О проекте — Hello Static Debug</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./pages.css">
   </head>
@@ -12,52 +12,68 @@
     <div class="app">
       <header class="header">
         <h1>📖 О проекте</h1>
-        <p class="page-subtitle">Как устроен Weather App и зачем мы его делаем</p>
+        <p class="page-subtitle">Что это, зачем и как оно устроено</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
       </header>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <a class="nav-link" href="./index.html">🏠 Главная</a>
-        <a class="nav-link" href="./forecast.html">📅 Прогноз на неделю</a>
-        <a class="nav-link" href="./cities.html">🌍 Города мира</a>
         <a class="nav-link active" href="./about.html">📖 О проекте</a>
         <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link" href="./contacts.html">✉️ Контакты</a>
         <a class="nav-link" href="./faq.html">❓ FAQ</a>
       </nav>
 
       <main>
         <section class="card">
-          <h2>Что это за проект</h2>
+          <h2>Зачем мы это делаем</h2>
           <p class="about-lead">
-            <strong>Weather App</strong> — учебный проект команды «Hello Static»:
-            сайт с прогнозом погоды, написанный на чистом HTML, CSS и JavaScript.
-            Мы сознательно отказались от фреймворков и сборщиков, чтобы понять,
-            как веб работает «под капотом». Сайт автоматически собирается и
-            публикуется на GitHub Pages при каждом изменении кода — это наш
-            первый опыт настройки CI/CD.
+            Hello Static Debug — учебный проект команды из пяти студентов.
+            Мы учимся веб-разработке на практике: не по слайдам, а создавая
+            настоящий сайт, который живёт в GitHub-репозитории и автоматически
+            деплоится на GitHub Pages. Здесь мы отрабатываем всё, что даёт
+            преподаватель: семантическую вёрстку, работу с ветками Git,
+            код-ревью, линтеры и командное взаимодействие.
           </p>
           <p class="about-lead">
-            Данные о погоде мы получаем из открытого сервиса
-            <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> —
-            это бесплатный API, который не требует регистрации и ключей.
-            На сайте есть поиск по любому городу мира, прогноз на неделю и
-            карточки погоды в крупнейших городах планеты.
+            Сайт начинался как «погода по городам», но мы сознательно ушли от
+            этой идеи: внешние API стабильно блокировались в учебных сетях и
+            предпросмотре редактора, и половина команды видела вместо прогноза
+            ошибку. Поэтому теперь сайт полностью автономный — весь контент
+            и все четыре мини-игры работают прямо из файлов, без интернета.
           </p>
         </section>
 
         <section class="card">
-          <h2>Как это работает</h2>
+          <h2>Почему всё работает офлайн</h2>
+          <ul class="stack-list">
+            <li><span class="stack-emoji">🔌</span><span><strong>Ноль запросов к API.</strong> Все данные (цитаты, факты, вопросы викторины) лежат прямо в JS-файлах.</span></li>
+            <li><span class="stack-emoji">🖱️</span><span><strong>Двойной клик — и готово.</strong> <code>index.html</code> открывается из проводника без сервера и сборки.</span></li>
+            <li><span class="stack-emoji">🪶</span><span><strong>Легче одной фотографии.</strong> Каждая страница весит меньше 100 КБ вместе со стилями и скриптами.</span></li>
+            <li><span class="stack-emoji">🛡️</span><span><strong>Нечему ломаться.</strong> Нет зависимостей от чужих серверов — значит, нет ошибок «не удалось загрузить данные».</span></li>
+          </ul>
+        </section>
+
+        <section class="card">
+          <h2>Как мы работаем</h2>
           <ol class="step-list">
             <li>
               <span class="step-num">1</span>
-              <span>Вы вводите название города — например, «Казань» или «Paris».</span>
+              <span>Идея попадает в <strong>Issues</strong> на GitHub: что сделать, зачем и кто берёт задачу.</span>
             </li>
             <li>
               <span class="step-num">2</span>
-              <span>JavaScript через сервис геокодинга Open-Meteo находит координаты города.</span>
+              <span>Каждый работает в <strong>своей ветке</strong> — правки в <code>main</code> напрямую не льём никогда.</span>
             </li>
             <li>
               <span class="step-num">3</span>
-              <span>По координатам запрашивается прогноз — и карточки на странице обновляются.</span>
+              <span>Готовая работа — это <strong>Pull Request</strong>: минимум один ревью от тимлида, линтеры должны быть зелёными.</span>
+            </li>
+            <li>
+              <span class="step-num">4</span>
+              <span>После вливания в <code>main</code> GitHub Actions <strong>автоматически деплоит</strong> сайт на GitHub Pages.</span>
             </li>
           </ol>
         </section>
@@ -65,29 +81,30 @@
         <section class="card">
           <h2>Технологии</h2>
           <ul class="stack-list">
-            <li><span class="stack-emoji">🧱</span><span><strong>HTML5</strong> — семантическая разметка всех шести страниц сайта</span></li>
-            <li><span class="stack-emoji">🎨</span><span><strong>CSS3</strong> — фиолетовый градиент, карточки, адаптивная вёрстка и переменные цветов</span></li>
-            <li><span class="stack-emoji">⚙️</span><span><strong>JavaScript (ES6+)</strong> — fetch-запросы, async/await, работа с DOM</span></li>
-            <li><span class="stack-emoji">🌍</span><span><strong>Open-Meteo API</strong> — геокодинг городов и данные о погоде</span></li>
-            <li><span class="stack-emoji">✅</span><span><strong>ESLint, Stylelint, html-validate</strong> — проверка качества кода</span></li>
-            <li><span class="stack-emoji">🤖</span><span><strong>GitHub Actions + GitHub Pages</strong> — автодеплой при каждом push в main</span></li>
+            <li><span class="stack-emoji">🧱</span><span><strong>HTML5</strong> — семантические теги: header, nav, main, section, details.</span></li>
+            <li><span class="stack-emoji">🎨</span><span><strong>CSS3</strong> — переменные, Flexbox, Grid, тёмная тема через data-атрибут.</span></li>
+            <li><span class="stack-emoji">⚙️</span><span><strong>JavaScript ES2022</strong> — DOM, события, localStorage; без фреймворков и библиотек.</span></li>
+            <li><span class="stack-emoji">🚀</span><span><strong>GitHub Pages + Actions</strong> — пуш в main = сайт обновился сам.</span></li>
+            <li><span class="stack-emoji">🧹</span><span><strong>ESLint, Stylelint, html-validate</strong> — три линтера следят за чистотой кода.</span></li>
           </ul>
         </section>
 
         <section class="card">
           <h2>Полезные ссылки</h2>
           <ul class="link-list">
-            <li>🐱 <a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Исходный код на GitHub</a></li>
-            <li>🌐 <a href="https://lehmanmihail-debug.github.io/hello-static-debug/" target="_blank" rel="noopener">Живая версия сайта</a></li>
-            <li>🌦️ <a href="https://open-meteo.com/" target="_blank" rel="noopener">API Open-Meteo (источник данных)</a></li>
+            <li>🐙 <a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Репозиторий проекта на GitHub</a></li>
+            <li>🌐 <a href="https://lehmanmihail-debug.github.io/hello-static-debug/" target="_blank" rel="noopener">Живой сайт на GitHub Pages</a></li>
+            <li>✉️ <a href="./contacts.html">Контакты команды</a></li>
           </ul>
         </section>
       </main>
 
       <footer class="footer">
-        <p>Данные: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
-        <p>Deployed with ❤️ to GitHub Pages</p>
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
       </footer>
     </div>
+
+    <script src="./theme.js"></script>
   </body>
 </html>

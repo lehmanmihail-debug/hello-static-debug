@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея — Hello Static Debug</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>🖼️ Галерея</h1>
+        <p class="page-subtitle">Уголок команды: наши мемы, девизы и наблюдения</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link active" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link" href="./contacts.html">✉️ Контакты</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <div class="gallery-grid">
+          <div class="gallery-tile tile-1">
+            <span class="tile-emoji">😅</span>
+            <h3>Дедлайн завтра</h3>
+            <p>Когда тесты падают за час до сдачи, а ты спокоен. Внешне.</p>
+          </div>
+          <div class="gallery-tile tile-2">
+            <span class="tile-emoji">🐛</span>
+            <h3>Это не баг</h3>
+            <p>Это недокументированная фича. Девиз Андрея при каждом ревью.</p>
+          </div>
+          <div class="gallery-tile tile-3">
+            <span class="tile-emoji">☕</span>
+            <h3>Кофе → код</h3>
+            <p>Цикл жизни разработчика: кофе, код, баг, кофе, фикс, кофе.</p>
+          </div>
+          <div class="gallery-tile tile-4">
+            <span class="tile-emoji">🔥</span>
+            <h3>Работает — не трогай</h3>
+            <p>Золотое правило, которое каждый нарушал минимум один раз.</p>
+          </div>
+          <div class="gallery-tile tile-5">
+            <span class="tile-emoji">🌙</span>
+            <h3>Коммит в 3 часа ночи</h3>
+            <p>«fix: мелкие правки» — самая честная подпись ночной работы Вениамина.</p>
+          </div>
+          <div class="gallery-tile tile-6">
+            <span class="tile-emoji">🤔</span>
+            <h3>Выключи и включи</h3>
+            <p>Первый совет Артёма по любому багу. Работает чаще, чем должно.</p>
+          </div>
+          <div class="gallery-tile tile-7">
+            <span class="tile-emoji">📚</span>
+            <h3>Гугл — лучший тимлид</h3>
+            <p>Шутка Михаила, в которой слишком много правды про обучение.</p>
+          </div>
+          <div class="gallery-tile tile-8">
+            <span class="tile-emoji">🚀</span>
+            <h3>Деплой в пятницу</h3>
+            <p>Рисковать — наша страсть. Но Pages пережил и это.</p>
+          </div>
+          <div class="gallery-tile tile-9">
+            <span class="tile-emoji">🎯</span>
+            <h3>Сделаем к вечеру</h3>
+            <p>Знаменитые последние слова Павла. Вечер наступил через неделю.</p>
+          </div>
+        </div>
+
+        <section class="card quote-box">
+          <h2>💡 Факт о проекте</h2>
+          <p id="fact-text" class="quote-text">Нажми кнопку — узнаешь что-то новое о нашем сайте.</p>
+          <button id="new-fact" class="btn btn-outline" type="button">🔄 Ещё факт</button>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
+      </footer>
+    </div>
+
+    <script src="./theme.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

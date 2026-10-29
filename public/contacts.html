@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Hello Static Debug</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>✉️ Контакты</h1>
+        <p class="page-subtitle">Напишите нам — отвечаем быстрее, чем закрывается дедлайн</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link active" href="./contacts.html">✉️ Контакты</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <section class="card">
+          <h2>Наши контакты</h2>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <div class="contact-main">
+                <span class="contact-emoji">📧</span>
+                <div>
+                  <span class="contact-label">Почта команды</span>
+                  <span class="contact-value">почты тоже еще нету:(</span>
+                </div>
+              </div>
+              <button class="copy-btn" type="button" data-copy="hello.static.debug@gmail.com">📋 Скопировать</button>
+            </li>
+            <li class="contact-item">
+              <div class="contact-main">
+                <span class="contact-emoji">💬</span>
+                <div>
+                  <span class="contact-label">Telegram</span>
+                  <span class="contact-value">Еще нету :(</span>
+                </div>
+              </div>
+              <button class="copy-btn" type="button" data-copy="@hello_static_debug">📋 Скопировать</button>
+            </li>
+            <li class="contact-item">
+              <div class="contact-main">
+                <span class="contact-emoji">🐙</span>
+                <div>
+                  <span class="contact-label">GitHub-репозиторий</span>
+                  <span class="contact-value">
+                    <a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">lehmanmihail-debug/hello-static-debug</a>
+                  </span>
+                </div>
+              </div>
+              <button class="copy-btn" type="button" data-copy="https://github.com/lehmanmihail-debug/hello-static-debug">📋 Скопировать</button>
+            </li>
+          </ul>
+          <p class="contact-note" style="margin-top:1rem">
+            Почта и Telegram сейчас указаны для примера — не забудьте заменить
+            их на настоящие перед сдачей проекта.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>Написать нам</h2>
+          <form id="contact-form" class="contact-form">
+            <input
+              id="cf-name"
+              type="text"
+              placeholder="Как вас зовут?"
+              autocomplete="name"
+              required
+            >
+            <input
+              id="cf-email"
+              type="email"
+              placeholder="Ваша почта для ответа"
+              autocomplete="email"
+              required
+            >
+            <textarea
+              id="cf-message"
+              placeholder="Ваше сообщение: вопрос, идея или предложение"
+              required
+            ></textarea>
+            <button type="submit" class="btn">📨 Отправить через почтовый клиент</button>
+            <p id="contact-success" class="form-success"></p>
+            <p class="contact-note">
+              Кнопка откроет ваш почтовый клиент с готовым письмом — сайт работает
+              без бэкенда и ничего не отправляет сам.
+            </p>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>🙋 Хочешь присоединиться к команде?</h2>
+          <ol class="step-list">
+            <li>
+              <span class="step-num">1</span>
+              <span>Напиши Михаилу на почту или в Telegram — коротко о себе и что тебе интересно.</span>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <span>Скинь ссылку на любую свою работу: страницу, скрипт или даже красивый README.</span>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <span>Получишь первую задачу из Issues с подробным описанием — и мы вместе сделаем ревью.</span>
+            </li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
+      </footer>
+    </div>
+
+    <script src="./theme.js"></script>
+    <script src="./contacts.js"></script>
+  </body>
+</html>

@@ -4,99 +4,119 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ — Погода</title>
+    <title>FAQ — Hello Static Debug</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./pages.css">
   </head>
   <body>
     <div class="app">
       <header class="header">
-        <h1>❓ Частые вопросы</h1>
-        <p class="page-subtitle">Всё, что вы хотели спросить о проекте</p>
+        <h1>❓ FAQ</h1>
+        <p class="page-subtitle">Частые вопросы и честные ответы</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
       </header>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <a class="nav-link" href="./index.html">🏠 Главная</a>
-        <a class="nav-link" href="./forecast.html">📅 Прогноз на неделю</a>
-        <a class="nav-link" href="./cities.html">🌍 Города мира</a>
         <a class="nav-link" href="./about.html">📖 О проекте</a>
         <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link" href="./contacts.html">✉️ Контакты</a>
         <a class="nav-link active" href="./faq.html">❓ FAQ</a>
       </nav>
 
       <main>
-        <details class="faq-item" open>
-          <summary>Откуда берутся данные о погоде?</summary>
-          <p class="faq-answer">
-            Из открытого API <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.
-            Это бесплатный сервис для некоммерческого использования: он не требует
-            регистрации и API-ключей. Мы отправляем запросы прямо из браузера —
-            сервер не нужен.
-          </p>
+        <details class="faq-item">
+          <summary>Как запустить сайт у себя?</summary>
+          <div class="faq-answer">
+            Просто откройте файл <code>index.html</code> двойным кликом — сайт
+            откроется в браузере и будет полностью работать: темы, игры, формы.
+            Можно и «по-взрослому»: запустить локальный сервер
+            (<code>python -m http.server</code>) или расширение Live Server в
+            VS Code, но это необязательно.
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary>Почему на главной показывается погода Москвы?</summary>
-          <p class="faq-answer">
-            Это демо-режим: чтобы страница не встречала вас пустыми карточками,
-            при загрузке мы автоматически показываем погоду Москвы. Просто
-            введите свой город — и данные обновятся.
-          </p>
+          <summary>Нужен ли интернет для работы сайта?</summary>
+          <div class="faq-answer">
+            Нет. Все данные — цитаты, факты, вопросы викторины, логика игр —
+            лежат прямо в файлах проекта. Интернет нужен только если вы хотите
+            посмотреть сайт на GitHub Pages или склонировать репозиторий.
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary>Какие города можно искать?</summary>
-          <p class="faq-answer">
-            Любой населённый пункт мира! Страница «Прогноз на неделю» использует
-            геокодинг Open-Meteo, который понимает русские и английские названия —
-            например, «Казань» или «London». На странице «Города мира» уже
-            собраны 9 крупнейших городов планеты.
-          </p>
+          <summary>Почему вы убрали прогноз погоды?</summary>
+          <div class="faq-answer">
+            Раньше сайт ходил к внешнему API за прогнозом, но в некоторых
+            сетях (учебные Wi-Fi, предпросмотр в редакторе) эти запросы
+            блокировались — пользователи видели «Не удалось загрузить данные».
+            Мы решили, что сайт, который всегда работает, лучше сайта с
+            погодой, который иногда работает. Так родилась текущая концепция.
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary>Почему сайт написан без React и Vue?</summary>
-          <p class="faq-answer">
-            Так задумано! Это учебный проект: цель команды — разобраться в основах
-            веб-разработки, а не прятать логику за фреймворками. Всё, что вы
-            видите на сайте, написано руками на HTML, CSS и JavaScript.
-          </p>
+          <summary>Как добавить новую страницу?</summary>
+          <div class="faq-answer">
+            Скопируйте любую готовую страницу как шаблон, поменяйте
+            содержимое блока <code>&lt;main&gt;</code>, отметьте свою вкладку
+            классом <code>active</code> в навигации — и добавьте ссылку в меню
+            на всех остальных страницах. Стили уже готовы: используйте классы
+            <code>card</code>, <code>stack-list</code>, <code>step-list</code>.
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary>Как быстро сайт обновляется после изменений кода?</summary>
-          <p class="faq-answer">
-            Автоматически! GitHub Actions собирает сайт и публикует его на
-            GitHub Pages при каждом push в ветку main. Обычно обновление
-            занимает одну-две минуты. Историю сборок можно посмотреть во
-            <a href="https://github.com/lehmanmihail-debug/hello-static-debug/actions" target="_blank" rel="noopener">вкладке Actions</a>.
-          </p>
+          <summary>Как изменения попадают на живой сайт?</summary>
+          <div class="faq-answer">
+            Каждая задача делается в отдельной ветке, затем оформляется
+            Pull Request. После ревью тимлида ветка вливается в <code>main</code>,
+            и GitHub Actions автоматически собирает и публикует сайт на
+            GitHub Pages. Статус сборки видно во вкладке Actions репозитория.
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary>Как запустить проект у себя на компьютере?</summary>
-          <p class="faq-answer">
-            Сборка не нужна: склонируйте
-            <a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">репозиторий</a>
-            и откройте файл <code>public/index.html</code> в браузере. Для запуска
-            линтеров выполните <code>npm install</code>, затем <code>npm run lint</code>.
-          </p>
+          <summary>Что проверяют линтеры?</summary>
+          <div class="faq-answer">
+            Три инструмента: <strong>ESLint</strong> следит за JavaScript
+            (неиспользуемые переменные, устаревшие приёмы), <strong>Stylelint</strong> —
+            за порядком в CSS, <strong>html-validate</strong> — за корректностью
+            разметки. Все три должны проходить без ошибок перед вливанием PR.
+          </div>
         </details>
 
         <details class="faq-item">
-          <summary>Я нашёл баг — что делать?</summary>
-          <p class="faq-answer">
-            Откройте <a href="https://github.com/lehmanmihail-debug/hello-static-debug/issues" target="_blank" rel="noopener">issue в репозитории</a>
-            и опишите проблему: что сделали, что ожидали и что получилось.
-            Команда разберётся и починит!
-          </p>
+          <summary>Кто авторы проекта?</summary>
+          <div class="faq-answer">
+            Учебная команда из пяти человек: Лехман Михаил (тимлид),
+            Роденко Вениамин (DevOps), Чудин Артём (фронтенд и тестирование),
+            Берендаков Андрей (дизайн и контент), Емельянов Павел
+            (QA и документация). Полные карточки — на странице
+            <a href="./team.html">«Команда»</a>.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Как с вами связаться?</summary>
+          <div class="faq-answer">
+            Почта и Telegram — на странице <a href="./contacts.html">«Контакты»</a>.
+            Можно написать прямо из формы там же: она откроет ваш почтовый
+            клиент с готовым письмом. Если хотите в команду — так и напишите,
+            обсудим первую задачу.
+          </div>
         </details>
       </main>
 
       <footer class="footer">
-        <p>Данные: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
-        <p>Deployed with ❤️ to GitHub Pages</p>
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
       </footer>
     </div>
+
+    <script src="./theme.js"></script>
   </body>
 </html>

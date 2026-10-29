@@ -4,107 +4,108 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Команда — Погода</title>
+    <title>Команда — Hello Static Debug</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./pages.css">
   </head>
   <body>
     <div class="app">
       <header class="header">
-        <h1>👥 Наша команда</h1>
-        <p class="page-subtitle">Пять человек, которые сделали этот сайт</p>
+        <h1>👥 Команда</h1>
+        <p class="page-subtitle">Пять человек, один репозиторий, ноль конфликтов (почти)</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
       </header>
 
       <nav class="site-nav" aria-label="Основная навигация">
         <a class="nav-link" href="./index.html">🏠 Главная</a>
-        <a class="nav-link" href="./forecast.html">📅 Прогноз на неделю</a>
-        <a class="nav-link" href="./cities.html">🌍 Города мира</a>
         <a class="nav-link" href="./about.html">📖 О проекте</a>
         <a class="nav-link active" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link" href="./contacts.html">✉️ Контакты</a>
         <a class="nav-link" href="./faq.html">❓ FAQ</a>
       </nav>
 
       <main>
-        <section class="card">
-          <h2>Кто мы</h2>
-          <p class="about-lead">
-            Проект сделан учебной командой из пяти человек. У каждого была своя
-            зона ответственности: так мы научились работать параллельно, вести
-            код через pull request'ы и ревьюить друг друга. Ниже — кто за что
-            отвечал.
-          </p>
-        </section>
-
         <div class="team-grid">
-          <article class="member-card">
+          <div class="member-card">
             <div class="member-avatar avatar-1">МЛ</div>
-            <p class="member-name">Лехман Михаил</p>
-            <span class="member-role">👑 Тимлид</span>
+            <div class="member-name">Лехман Михаил</div>
+            <span class="member-role"> Тимлид · Frontend</span>
             <p class="member-desc">
-              Ставил задачи, придумывал архитектуру проекта, ревьюил код
-              одногруппников и сливал pull request'ы в main.
+              Собирает всё вместе: архитектура сайта, главная страница, код-ревью
+              и контроль дедлайнов. Владелец репозитория и человек, который
+              первым проверяет каждый Pull Request.
             </p>
-          </article>
-
-          <article class="member-card">
+          </div>
+          <div class="member-card">
             <div class="member-avatar avatar-2">ВР</div>
-            <p class="member-name">Роденко Вениамин</p>
-            <span class="member-role">🛠️ Девопс</span>
+            <div class="member-name">Роденко Вениамин</div>
+            <span class="member-role"> DevOps · CI/CD</span>
             <p class="member-desc">
-              Настроил CI/CD: workflow GitHub Actions, автодеплой на GitHub
-              Pages и линтеры для проверки кода.
+              Настраивает GitHub Actions и деплой на Pages. Именно благодаря
+              ему пуш в main автоматически превращается в обновлённый сайт,
+              а линтеры проверяют каждый коммит.
             </p>
-          </article>
-
-          <article class="member-card">
+          </div>
+          <div class="member-card">
             <div class="member-avatar avatar-3">АЧ</div>
-            <p class="member-name">Чудин Артём</p>
-            <span class="member-role">💻 Программист</span>
+            <div class="member-name">Чудин Артём</div>
+            <span class="member-role"> Frontend · Тестирование</span>
             <p class="member-desc">
-              Верстал страницы: разметка, семантика, структура карточек
-              и адаптивность под мобильные устройства.
+              Пишет стили и гоняет интерфейс по всем браузерам и телефонам.
+              Если где-то поехал футер на ширине 375px — Артём найдёт это
+              раньше вас.
             </p>
-          </article>
-
-          <article class="member-card">
+          </div>
+          <div class="member-card">
             <div class="member-avatar avatar-4">АБ</div>
-            <p class="member-name">Берендаков Андрей</p>
-            <span class="member-role">💻 Программист</span>
+            <div class="member-name">Берендаков Андрей</div>
+            <span class="member-role"> Дизайн · Контент</span>
             <p class="member-desc">
-              Занимался стилями: градиент, оформление карточек погоды,
-              цветовые переменные и аккуратная сетка.
+              Придумывает тексты, разделы и структуру страниц. Автор половины
+              шуток в галерее и человек, который решает, какой emoji ставить
+              в заголовок.
             </p>
-          </article>
-
-          <article class="member-card">
+          </div>
+          <div class="member-card">
             <div class="member-avatar avatar-5">ПЕ</div>
-            <p class="member-name">Емельянов Павел</p>
-            <span class="member-role">💻 Программист</span>
+            <div class="member-name">Емельянов Павел</div>
+            <span class="member-role"> QA · Документация</span>
             <p class="member-desc">
-              Писал JavaScript: запросы к API Open-Meteo, обработка ответов
-              и ошибок, обновление страницы без перезагрузки.
+              Ведёт README и INSTALL, пишет чек-листы проверок. Убедился,
+              что сайт работает даже без интернета — и записал это в
+              документацию.
             </p>
-          </article>
+          </div>
         </div>
 
         <section class="card">
-          <h2>Хотите помочь?</h2>
-          <p class="about-lead">
-            Мы открыты к идеям! Если хотите предложить улучшение — откройте issue
-            в репозитории или пришлите pull request. Правила работы описаны
-            в README проекта.
-          </p>
-          <ul class="link-list">
-            <li>🐛 <a href="https://github.com/lehmanmihail-debug/hello-static-debug/issues" target="_blank" rel="noopener">Сообщить о баге или предложить идею</a></li>
-            <li>📁 <a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Репозиторий проекта</a></li>
+          <h2>Чем мы гордимся</h2>
+          <ul class="stack-list">
+            <li><span class="stack-emoji">🏆</span><span><strong>Сайт работает без интернета</strong> — открыли файл, и всё функционирует: игры, тема, формы.</span></li>
+            <li><span class="stack-emoji">🧪</span><span><strong>Зелёные линтеры</strong> — ESLint, Stylelint и html-validate проходят без ошибок и предупреждений.</span></li>
+            <li><span class="stack-emoji">🤝</span><span><strong>Настоящий командный процесс</strong> — ветки, PR, ревью и Issues, как во взрослых командах.</span></li>
           </ul>
+        </section>
+
+        <section class="card quote-box">
+          <h2>🙋 Хочешь к нам?</h2>
+          <p class="about-lead" style="text-align:center">
+            Мы всегда рады людям, которые хотят учиться вместе. Напиши Михаилу
+            в Telegram или на почту — расскажем, как присоединиться и с какой
+            задачи начать.
+          </p>
+          <a class="btn" href="./contacts.html">✉️ Связаться с нами</a>
         </section>
       </main>
 
       <footer class="footer">
-        <p>Данные: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></p>
-        <p>Deployed with ❤️ to GitHub Pages</p>
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
       </footer>
     </div>
+
+    <script src="./theme.js"></script>
   </body>
 </html>

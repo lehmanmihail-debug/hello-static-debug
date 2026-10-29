@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Развлечения — Hello Static Debug</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>🎮 Развлечения</h1>
+        <p class="page-subtitle">Четыре мини-игры, написанные с нуля на JavaScript</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link active" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link" href="./contacts.html">✉️ Контакты</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <section class="card quote-box">
+          <h2>☕ Пауза между парами?</h2>
+          <p class="about-lead">
+            Все игры написаны командой на чистом JavaScript — без библиотек и
+            движков. Они не требуют интернета, поэтому заряжать телефон перед
+            игрой не обязательно, а вот победить робота — придётся.
+          </p>
+        </section>
+
+        <div class="games-grid">
+          <!-- Игра 1: Крестики-нолики -->
+          <section class="game-card">
+            <h3>⭕✖ Крестики-нолики</h3>
+            <p class="game-hint">Ты играешь крестиками, компьютер — ноликами, и он не поддаётся.</p>
+            <div class="ttt-board">
+              <button type="button" class="ttt-cell" aria-label="Клетка 1"></button>
+              <button type="button" class="ttt-cell" aria-label="Клетка 2"></button>
+              <button type="button" class="ttt-cell" aria-label="Клетка 3"></button>
+              <button type="button" class="ttt-cell" aria-label="Клетка 4"></button>
+              <button type="button" class="ttt-cell" aria-label="Клетка 5"></button>
+              <button type="button" class="ttt-cell" aria-label="Клетка 6"></button>
+              <button type="button" class="ttt-cell" aria-label="Клетка 7"></button>
+              <button type="button" class="ttt-cell" aria-label="Клетка 8"></button>
+              <button type="button" class="ttt-cell" aria-label="Клетка 9"></button>
+            </div>
+            <p id="ttt-status" class="game-status">Ваш ход — ставьте ✖</p>
+            <button id="ttt-reset" class="btn btn-outline" type="button">🔄 Новая партия</button>
+            <div class="score-row">
+              <span class="score-chip">Вы: <strong id="ttt-score-x">0</strong></span>
+              <span class="score-chip">Робот: <strong id="ttt-score-o">0</strong></span>
+              <span class="score-chip">Ничьи: <strong id="ttt-score-d">0</strong></span>
+            </div>
+          </section>
+
+          <!-- Игра 2: Камень, ножницы, бумага -->
+          <section class="game-card">
+            <h3>✊✌️✋ Камень, ножницы, бумага</h3>
+            <p class="game-hint">Выбери знак — и посмотри, что выкинет компьютер.</p>
+            <div class="rps-choices">
+              <button type="button" class="rps-btn" aria-label="Камень">✊</button>
+              <button type="button" class="rps-btn" aria-label="Ножницы">✌️</button>
+              <button type="button" class="rps-btn" aria-label="Бумага">✋</button>
+            </div>
+            <div class="rps-field">
+              <span id="rps-player" class="rps-hand">❔</span>
+              <span class="rps-vs">VS</span>
+              <span id="rps-computer" class="rps-hand">❔</span>
+            </div>
+            <p id="rps-status" class="game-status">Сделай свой выбор!</p>
+            <div class="score-row">
+              <span class="score-chip">Победы: <strong id="rps-score-w">0</strong></span>
+              <span class="score-chip">Поражения: <strong id="rps-score-l">0</strong></span>
+            </div>
+          </section>
+
+          <!-- Игра 3: Угадай число -->
+          <section class="game-card">
+            <h3>🔢 Угадай число</h3>
+            <p class="game-hint">Компьютер загадал число от 1 до 100. Угадай за минимальное число попыток.</p>
+            <form id="guess-form" class="guess-form">
+              <input
+                id="guess-input"
+                type="number"
+                min="1"
+                max="100"
+                placeholder="1–100"
+                autocomplete="off"
+                required
+              >
+              <button type="submit" class="btn">Проверить</button>
+            </form>
+            <p id="guess-status" class="game-status">Я загадал число от 1 до 100. Попробуй угадать!</p>
+            <p id="guess-attempts" class="quiz-progress">Попыток: 0</p>
+            <button id="guess-reset" class="btn btn-outline" type="button">🔄 Загадать заново</button>
+          </section>
+
+          <!-- Игра 4: Викторина -->
+          <section class="game-card">
+            <h3>🧠 Викторина «Знаешь IT?»</h3>
+            <p class="game-hint">Шесть вопросов по основам веб-разработки. Подсмотреть можно — но нечестно.</p>
+            <p id="quiz-progress" class="quiz-progress">Вопрос 1 из 6</p>
+            <p id="quiz-question" class="quiz-question">—</p>
+            <div id="quiz-options" class="quiz-options"></div>
+            <p id="quiz-status" class="game-status"></p>
+            <button id="quiz-next" class="quiz-next hidden" type="button">Следующий вопрос →</button>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
+      </footer>
+    </div>
+
+    <script src="./theme.js"></script>
+    <script src="./games.js"></script>
+  </body>
+</html>
