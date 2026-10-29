@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Достижения — Hello Static Debug</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>🏅 Достижения</h1>
+        <p class="page-subtitle">Награды, которые команда выдала сама себе — и заслуженно</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link" href="./timer.html">⏱️ Таймер</a>
+        <a class="nav-link" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link" href="./blog.html">📓 Дневник</a>
+        <a class="nav-link active" href="./achievements.html">🏅 Достижения</a>
+        <a class="nav-link" href="./contacts.html">✉️ Контакты</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <section class="card quote-box">
+          <h2>Как это работает</h2>
+          <p class="about-lead">
+            Как в играх: сделал что-то крутое — получил ачивку. Мы прошли через
+            ошибки, деплои и ночные коммиты, так что награды заслужены честно.
+            Открыто 9 из 10 достижений — последнее секретное.
+          </p>
+        </section>
+
+        <div class="ach-grid">
+          <div class="ach-card">
+            <span class="ach-emoji tile-1">🚀</span>
+            <h3>Первый деплой</h3>
+            <p>Сайт впервые выложен на GitHub Pages и открывается из интернета.</p>
+            <span class="ach-tag">Обычное</span>
+          </div>
+          <div class="ach-card">
+            <span class="ach-emoji tile-2">💀</span>
+            <h3>No push destination</h3>
+            <p>Получили легендарную ошибку git push — и никто не заплакал.</p>
+            <span class="ach-tag">Классика</span>
+          </div>
+          <div class="ach-card">
+            <span class="ach-emoji tile-3">🐛</span>
+            <h3>Охотники на gitlink</h3>
+            <p>Найден и обезврежен встроенный репозиторий внутри коммита.</p>
+            <span class="ach-tag">Эпик</span>
+          </div>
+          <div class="ach-card">
+            <span class="ach-emoji tile-4">📴</span>
+            <h3>Полный офлайн</h3>
+            <p>Ноль запросов к API: сайт работает даже в самолёте.</p>
+            <span class="ach-tag">Эпик</span>
+          </div>
+          <div class="ach-card">
+            <span class="ach-emoji tile-5">🎮</span>
+            <h3>Геймдевы</h3>
+            <p>Четыре мини-игры написаны с нуля на чистом JavaScript.</p>
+            <span class="ach-tag">Эпик</span>
+          </div>
+          <div class="ach-card">
+            <span class="ach-emoji tile-6">🎨</span>
+            <h3>Одна переменная</h3>
+            <p>Тёмная тема всего сайта переключается одним data-атрибутом.</p>
+            <span class="ach-tag">Магия</span>
+          </div>
+          <div class="ach-card">
+            <span class="ach-emoji tile-7">🤖</span>
+            <h3>CI повелители</h3>
+            <p>Линтеры поймали наши inline-стили — и были прощены за 5 минут.</p>
+            <span class="ach-tag">Легенда</span>
+          </div>
+          <div class="ach-card">
+            <span class="ach-emoji tile-8">📚</span>
+            <h3>README больше кода</h3>
+            <p>Документация проекта длиннее, чем вся главная страница.</p>
+            <span class="ach-tag">Забавное</span>
+          </div>
+          <div class="ach-card">
+            <span class="ach-emoji tile-9">🏆</span>
+            <h3>Десять страниц</h3>
+            <p>Из одной страницы с погодой вырос целый сайт команды.</p>
+            <span class="ach-tag">Легенда</span>
+          </div>
+        </div>
+
+        <section class="card quote-box">
+          <h2>🔐 Секретное достижение</h2>
+          <p class="quote-text">Ты дочитал наш сайт до страницы достижений.</p>
+          <p class="quote-author">Достижение открыто 🍪 — забирай печеньку</p>
+          <a class="btn" href="./games.html">🎮 А теперь в игры</a>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
+      </footer>
+    </div>
+
+    <script src="./theme.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

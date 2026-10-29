@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таймер — Hello Static Debug</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>⏱️ Таймер</h1>
+        <p class="page-subtitle">Помодоро-таймер для учёбы — без рекламы и аккаунтов</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link active" href="./timer.html">⏱️ Таймер</a>
+        <a class="nav-link" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link" href="./blog.html">📓 Дневник</a>
+        <a class="nav-link" href="./achievements.html">🏅 Достижения</a>
+        <a class="nav-link" href="./contacts.html">✉️ Контакты</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <section class="card timer-wrap">
+          <h2>🍅 Метод помодоро</h2>
+          <div class="timer-modes" role="group" aria-label="Режим таймера">
+            <button type="button" class="mode-btn active" data-mode="pomodoro">🍅 Помодоро · 25 мин</button>
+            <button type="button" class="mode-btn" data-mode="short">☕ Перерыв · 5 мин</button>
+            <button type="button" class="mode-btn" data-mode="long">🛋️ Отдых · 15 мин</button>
+          </div>
+          <div id="timer-display" class="timer-display">25:00</div>
+          <p id="timer-status" class="timer-label">🍅 Помодоро — нажми «Старт», когда будешь готов.</p>
+          <div class="progress-track">
+            <div id="timer-progress" class="progress-fill"></div>
+          </div>
+          <div class="timer-controls">
+            <button id="timer-start" class="btn" type="button">▶️ Старт</button>
+            <button id="timer-reset" class="btn btn-outline" type="button">🔄 Сброс</button>
+          </div>
+          <div class="score-row">
+            <span class="score-chip">🍅 Помидоров завершено: <strong id="pomodoro-count">0</strong></span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Как пользоваться</h2>
+          <ol class="step-list">
+            <li>
+              <span class="step-num">1</span>
+              <span>Выбери режим: 25 минут работы, 5 минут короткого перерыва или 15 минут длинного отдыха.</span>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <span>Нажми «Старт» и убери телефон. Таймер идёт даже при свернутой вкладке — время видно прямо в заголовке браузера.</span>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <span>После каждого завершённого помодоро делай перерыв: встань, разомнись, налей воды. Каждые 3–4 помодоро — длинный отдых.</span>
+            </li>
+          </ol>
+        </section>
+
+        <section class="card quote-box">
+          <h2>💡 Почему это работает</h2>
+          <p class="about-lead">
+            Мозг не умеет концентрироваться «вообще» — ему нужны рамки.
+            Двадцатипятиминутный отрезок достаточно короткий, чтобы не пугать,
+            и достаточно длинный, чтобы успеть что-то сделать. А обещанный
+            перерыв снимает чувство вины за отдых. Работает офлайн, как и весь
+            наш сайт — хоть на паре, хоть в лифте.
+          </p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
+      </footer>
+    </div>
+
+    <script src="./theme.js"></script>
+    <script src="./timer.js"></script>
+  </body>
+</html>

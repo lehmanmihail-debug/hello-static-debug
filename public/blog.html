@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дневник — Hello Static Debug</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./pages.css">
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <h1>📓 Дневник</h1>
+        <p class="page-subtitle">Как этот сайт появился — честная история разработки</p>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Переключить тему">🌙</button>
+      </header>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a class="nav-link" href="./index.html">🏠 Главная</a>
+        <a class="nav-link" href="./about.html">📖 О проекте</a>
+        <a class="nav-link" href="./team.html">👥 Команда</a>
+        <a class="nav-link" href="./games.html">🎮 Развлечения</a>
+        <a class="nav-link" href="./timer.html">⏱️ Таймер</a>
+        <a class="nav-link" href="./gallery.html">🖼️ Галерея</a>
+        <a class="nav-link active" href="./blog.html">📓 Дневник</a>
+        <a class="nav-link" href="./achievements.html">🏅 Достижения</a>
+        <a class="nav-link" href="./contacts.html">✉️ Контакты</a>
+        <a class="nav-link" href="./faq.html">❓ FAQ</a>
+      </nav>
+
+      <main>
+        <section class="card">
+          <h2>Путь от hello world до 10 страниц</h2>
+          <p class="about-lead">
+            Мы решили вести дневник проекта — так интереснее смотреть, сколько
+            всего произошло за пару месяцев. Здесь и победы, и провалы, и
+            легендарные ошибки Git, без которых не обходится ни одна команда.
+          </p>
+
+          <ul class="timeline">
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <span class="timeline-date">Этап 1 · Старт</span>
+              <h3>🌱 Всё началось с репозитория</h3>
+              <p>
+                Создали <code>hello-static-debug</code>, сделали первый коммит с
+                «Hello, world!». Половина команды впервые познакомилась с Git:
+                путались в add и commit, боялись push и гуглили каждый шаг.
+                Зато теперь это наша база — весь проект живёт здесь.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <span class="timeline-date">Этап 2 · Первая фича</span>
+              <h3>🌤 Эпоха погоды</h3>
+              <p>
+                Первым большим делом сделали погодный виджет. Работал он на
+                локальных демо-данных — и это было честно и стабильно. Мы
+                научились менять DOM из JavaScript, обрабатывать формы и
+                выводить карточки. Кто знал, что погода нас надолго не отпустит.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <span class="timeline-date">Этап 3 · Кризис</span>
+              <h3>💥 День, когда всё сломалось</h3>
+              <p>
+                Решили подключить настоящий API — и погода превратилась в
+                «Не удалось загрузить данные» в предпросмотре. Параллельно
+                <code>git add -A</code> притащил в коммит вложенный репозиторий,
+                а <code>git push</code> выдал легендарное «No configured push
+                destination». Вечер был весёлый, зато мы теперь понимаем Git
+                лучше многих сеньоров.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <span class="timeline-date">Этап 4 · Перезапуск</span>
+              <h3>🔄 Сайт команды вместо погоды</h3>
+              <p>
+                Приняли стратегическое решение: сайт, который всегда работает,
+                лучше сайта, который иногда показывает погоду. Убрали API,
+                добавили игры, галерею, контакты и FAQ — 7 страниц, которые
+                открываются даже без интернета, прямо двойным кликом.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <span class="timeline-date">Этап 5 · Дисциплина</span>
+              <h3>🤖 CI нас поймал</h3>
+              <p>
+                GitHub Actions впервые завершился красным: html-validate нашёл
+                два inline-стиля в разметке. Починили за пять минут, а заодно
+                окончательно подружились с линтерами. Теперь зелёная сборка —
+                наш ритуал перед каждым пушем.
+              </p>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <span class="timeline-date">Сейчас · Развитие</span>
+              <h3>🚀 Десять страниц и дальше</h3>
+              <p>
+                К сайту добавились дневник (ты его читаешь), страница достижений
+                и помодоро-таймер для учёбы. В планах — ещё больше интерактива:
+                следи за обновлениями в репозитории и вкладке Actions.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="card quote-box">
+          <h2>🧠 Главный вывод</h2>
+          <p class="quote-text">
+            «Проекты не растут от того, что всё идёт гладко. Они растут от
+            того, что команда чинит то, что сломалось.»
+          </p>
+          <p class="quote-author">— команда Hello Static Debug</p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Сделано командой Hello Static Debug · <span id="year">2025</span></p>
+        <p><a href="https://github.com/lehmanmihail-debug/hello-static-debug" target="_blank" rel="noopener">Наш GitHub</a></p>
+      </footer>
+    </div>
+
+    <script src="./theme.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
